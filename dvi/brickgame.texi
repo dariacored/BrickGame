@@ -1,0 +1,162 @@
+\input texinfo
+
+@setfilename brickgame.info
+@settitle BrickGame Documentation
+
+@dircategory Games
+@direntry
+* BrickGame: (brickgame).        BrickGame by tylandmi documentation.
+@end direntry
+
+@titlepage
+@title BrickGame Documentation
+@subtitle Version 2.0
+@author tylandmi
+@end titlepage
+
+@node Top
+@top BrickGame Documentation
+
+Добро пожаловать в документацию по BrickGame! Эта игра включает две классические игры:
+@itemize
+@item Тетрис
+@item Змейка
+@end itemize
+
+@menu
+* Требования::         Необходимые пакеты для установки
+* Установка::          Инструкции по установке игры
+* Запуск::             Как запустить игру
+* Управление::         Управление в игре
+@end menu
+
+@node Требования
+@chapter Требования
+
+Для установки и запуска BrickGame необходимы следующие компоненты:
+
+@itemize
+@item Операционная система: Linux или macOS
+@item Компилятор: GCC (версия 9.3.0 или выше)
+@item Система сборки: Make
+@item Зависимости:
+  @itemize
+  @item Ncurses (для консольной версии)
+  @item SQLite3 (для хранения рекордов)
+  @item Qt5 или Qt6 (для графической версии)
+  @end itemize
+@end itemize
+
+@section Установка зависимостей на Ubuntu/Debian
+@example
+sudo apt update
+sudo apt install build-essential libncurses-dev libsqlite3-dev qtbase5-dev
+@end example
+
+@section Установка зависимостей на macOS
+@example
+brew update
+brew install ncurses sqlite qt
+@end example
+
+@node Установка
+@chapter Установка игры
+
+Выполните следующие шаги для установки игры:
+
+1. Скачайте архив с игрой:
+@example
+wget https://example.com/brickgame.tar.gz
+@end example
+
+2. Распакуйте архив:
+@example
+tar -xzf brickgame.tar.gz
+@end example
+
+3. Перейдите в директорию проекта:
+@example
+cd BrickGame_by_tylandmi_2.0
+@end example
+
+4. Соберите проект:
+@example
+make
+@end example
+
+5. Установите игру в систему (опционально):
+@example
+sudo make install
+@end example
+
+@node Запуск
+@chapter Запуск игры
+
+@section Консольный режим
+Для запуска в консольном режиме:
+@example
+# Запустить Тетрис:
+make run_cli_tetris
+
+# Запустить Змейку:
+make run_cli_snake
+@end example
+
+@section Графический режим (Qt)
+Для запуска в графическом режиме:
+@example
+# Запустить Тетрис:
+make run_desktop_tetris
+
+# Запустить Змейку:
+make run_desktop_snake
+@end example
+
+@section Меню выбора
+Для запуска интерактивного меню выбора игры:
+@example
+make game_selection
+@end example
+
+@node Управление
+@chapter Управление в игре
+
+@section Общие управляющие клавиши
+@table @asis
+@item Start
+Начать игру (Enter)
+@item Pause
+Пауза/продолжение игры (P)
+@item Terminate
+Выход из игры (Esc)
+@end table
+
+@section Управление в Тетрисе
+@table @asis
+@item Left
+Перемещение влево (стрелка влево)
+@item Right
+Перемещение вправо (стрелка вправо)
+@item Up
+Поворот фигуры (стрелка вверх)
+@item Down
+Ускоренное падение (стрелка вниз)
+@item Action
+Мгновенное падение (Пробел)
+@end table
+
+@section Управление в Змейке
+@table @asis
+@item Left
+Движение влево (стрелка влево)
+@item Right
+Движение вправо (стрелка вправо)
+@item Up
+Движение вверх (стрелка вверх)
+@item Down
+Движение вниз (стрелка вниз)
+@item Action
+Временное ускорение (Пробел)
+@end table
+
+@bye
